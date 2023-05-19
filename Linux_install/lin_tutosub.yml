@@ -1,0 +1,14 @@
+name: workenvsub
+channels:
+  - defaults
+dependencies:
+  - python=3.6
+  - tensorflow=1.15
+  - pyyaml
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - cftime
+  - netcdf4
+  - jupyter
+prefix: /home/olidur/miniconda3/envs/workenvsub
