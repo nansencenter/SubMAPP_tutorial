@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.som.Som.train &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="submapp.som.Som.weights_features" href="submapp.som.Som.weights_features.html" />
+    <link rel="prev" title="submapp.som.Som.standardize" href="submapp.som.Som.standardize.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-som-som-train">
+<h1>submapp.som.Som.train<a class="headerlink" href="#submapp-som-som-train" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="submapp.som.Som.train">
+<code class="sig-prename descclassname">Som.</code><code class="sig-name descname">train</code><span class="sig-paren">(</span><em class="sig-param">data_train: numpy.ndarray</em>, <em class="sig-param">T_train: int = None</em>, <em class="sig-param">batch_size: int = None</em>, <em class="sig-param">param: Tuple[float</em>, <em class="sig-param">float</em>, <em class="sig-param">float</em>, <em class="sig-param">float] = None</em>, <em class="sig-param">missing_data: bool = False</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#submapp.som.Som.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train the SOM (ie update the weights) provided training        data.</p>
+<p>Update weights - for all input 
+<span class="math notranslate nohighlight">\(x[t] \; t \in [0, len(data_train)]\)</span> - as follows</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}weights[k] &amp; = weights[k] \\&amp; + a(t)            \times exp[\frac{dist(weights[k],BMU(t))}{ s^{2}(t) } ]            \times [weights[k]-x[t]]\end{aligned}\end{align} \]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_train</strong> (<em>np.ndarray</em><em>[</em><em>float</em><em>]</em><em>, </em><em>shape =</em><em> (</em><em>_</em><em>, </em><em>p</em><em>)</em>) – Training data</p></li>
+<li><p><strong>T_train</strong> (<em>int</em><em>, </em><em>optional</em>) – Size of the entire training dataset. Once 
+<code class="docutils literal notranslate"><span class="pre">T_train</span></code> vectors
+have been used since the last time a new value of <code class="docutils literal notranslate"><span class="pre">param</span></code>
+was given, the learning rate and the radius take their
+final value (i.e. <code class="docutils literal notranslate"><span class="pre">aT</span></code> and <code class="docutils literal notranslate"><span class="pre">sT</span></code>). Defaults to None,
+In this case, <code class="docutils literal notranslate"><span class="pre">T_train=len(data_train)</span></code>.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – NOT IMPLEMENTED YET.
+Defaults to None, in this case <code class="docutils literal notranslate"><span class="pre">batch_size=1</span></code></p></li>
+<li><p><strong>param</strong> (<em>Tuple</em><em>[</em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>, </em><em>float</em><em>]</em><em>, </em><em>optional</em>) – <p>Hyperparameters of the Som for the training phase 
+<code class="docutils literal notranslate"><span class="pre">(a0,aT,s0,sT)</span></code> with:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">a0</span></code>: initial learning rate (<code class="docutils literal notranslate"><span class="pre">0&lt;a0&lt;1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aT</span></code>: final learning rate (<code class="docutils literal notranslate"><span class="pre">0&lt;aT&lt;1</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s0</span></code>: initial radius (<code class="docutils literal notranslate"><span class="pre">0&lt;s0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sT</span></code>: final radius (<code class="docutils literal notranslate"><span class="pre">0&lt;sT</span></code>)</p></li>
+</ul>
+</div></blockquote>
+<p>For each iteration (vector from <code class="docutils literal notranslate"><span class="pre">data_train</span></code>) the learning
+rate and the radius decrease linearly until they reach
+their final value.</p>
+<p>Defaults to None, in this case the previous value of param
+is used. If this value has never been
+initialized then:</p>
+<blockquote>
+<div><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">a0</span> <span class="pre">=</span> <span class="pre">0.9</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aT</span> <span class="pre">=</span> <span class="pre">0.1</span></code></p></li>
+<li><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(n=1</span> <span class="pre">or</span> <span class="pre">m=1):</span> <span class="pre">s0</span> <span class="pre">=</span> <span class="pre">min(max(n,</span> <span class="pre">m)/10.0,</span> <span class="pre">4.0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else:</span> <span class="pre">s0</span> <span class="pre">=</span> <span class="pre">max(max(n,</span> <span class="pre">m)/10.0,</span> <span class="pre">1.0)</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sT</span> <span class="pre">=</span> <span class="pre">0.5</span></code></p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>missing_data</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>indicates whether <code class="docutils literal notranslate"><span class="pre">data_train</span></code> contains missing data
+(represented by <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>),
+NOT IMPLEMENTED YET
+Defaults to False.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">missing_data=False</span></code> and <code class="docutils literal notranslate"><span class="pre">data_train</span></code> does
+contain missing data then results will be 
+inconsistent</p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/submapp/som/Som/submapp.som.Som.train.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/submapp/som/Som/submapp.som.Som.train.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

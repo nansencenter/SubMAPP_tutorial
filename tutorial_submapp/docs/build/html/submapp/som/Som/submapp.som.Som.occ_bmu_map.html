@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.som.Som.occ_bmu_map &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="submapp.som.Som.p" href="submapp.som.Som.p.html" />
+    <link rel="prev" title="submapp.som.Som.nb_training_iterations" href="submapp.som.Som.nb_training_iterations.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-som-som-occ-bmu-map">
+<h1>submapp.som.Som.occ_bmu_map<a class="headerlink" href="#submapp-som-som-occ-bmu-map" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="submapp.som.Som.occ_bmu_map">
+<em class="property">property </em><code class="sig-prename descclassname">Som.</code><code class="sig-name descname">occ_bmu_map</code><a class="headerlink" href="#submapp.som.Som.occ_bmu_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Occurence of each class as BMU during the mapping phase</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">BMU(t)</span></code> be the BMU at instant <code class="docutils literal notranslate"><span class="pre">t</span></code> during the mapping
+phase. Then:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">occ_bmu_map</span><span class="p">[</span><span class="n">BMU</span><span class="p">(</span><span class="n">t</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>This attribute can help to detect whether some aeras in the SOM
+are never used or not as much as some other aeras. In this case
+it might be due to the non-adapted shape of the SOM or wrong
+set of hyperparameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.ndarray[int], shape = (nb_class)</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Should not be confused with
+<a class="reference internal" href="../../map2d/Map2d/submapp.map2d.Map2d.occ_bmu_map.html"><span class="doc">Map2d.occ_bmu_map</span></a></p>
+</div>
+</dd></dl>
+
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/submapp/som/Som/submapp.som.Som.occ_bmu_map.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/submapp/som/Som/submapp.som.Som.occ_bmu_map.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

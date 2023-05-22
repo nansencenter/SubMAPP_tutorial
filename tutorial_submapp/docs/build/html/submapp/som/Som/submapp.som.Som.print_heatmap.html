@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.som.Som.print_heatmap &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="submapp.som.Som.print_weights_pca_axis" href="submapp.som.Som.print_weights_pca_axis.html" />
+    <link rel="prev" title="submapp.som.Som.pca_weights_initialization" href="submapp.som.Som.pca_weights_initialization.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-som-som-print-heatmap">
+<h1>submapp.som.Som.print_heatmap<a class="headerlink" href="#submapp-som-som-print-heatmap" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="submapp.som.Som.print_heatmap">
+<code class="sig-prename descclassname">Som.</code><code class="sig-name descname">print_heatmap</code><span class="sig-paren">(</span><em class="sig-param">data: numpy.ndarray = None</em>, <em class="sig-param">vmin: float = None</em>, <em class="sig-param">vmax: float = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#submapp.som.Som.print_heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the heatmap describing a feature of the classes</p>
+<p>This is a visual way to detect whether referent vectors of
+each area of the SOM share indeed some common features (only
+one feature at a time though…). If within a given aera the
+vectors have very heterogeneous values then either the 
+feature is not relevant with respect to the data or the SOM
+is not adapted to the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>np.ndarray</em><em>[</em><em>float</em><em>, </em><em>int</em><em>]</em><em>, </em><em>shape =</em><em> (</em><em>nb_class</em><em>)</em>) – Matrix whose elements describe a feature of the 
+corresponding class. Typically data could be
+<code class="docutils literal notranslate"><span class="pre">Som.occ_bmu_map</span></code>, <code class="docutils literal notranslate"><span class="pre">Som.weights_features</span></code>,
+Som.time_info[0] or Som.time_info[1]
+Defaults to None, in this case, <code class="docutils literal notranslate"><span class="pre">data=Som.occ_bmu_map</span></code>
+and then the heatmap shows how much each aera of the SOM
+has been used during the mapping phase.</p></li>
+<li><p><strong>vmin</strong> (<em>float</em><em>, </em><em>optional</em>) – min value to anchor the colormap. 
+Defaults to None. In this case <code class="docutils literal notranslate"><span class="pre">vmin</span> <span class="pre">=</span> <span class="pre">np.min(data)</span></code></p></li>
+<li><p><strong>vmax</strong> (<em>float</em><em>, </em><em>optional</em>) – max value to anchor the colormap. 
+Defaults to None. In this case <code class="docutils literal notranslate"><span class="pre">vmax</span> <span class="pre">=</span> <span class="pre">np.max(data)</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/submapp/som/Som/submapp.som.Som.print_heatmap.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/submapp/som/Som/submapp.som.Som.print_heatmap.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.som.Som &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="submapp.som.Som.data_mean" href="Som/submapp.som.Som.data_mean.html" />
+    <link rel="prev" title="submapp.som.save" href="submapp.som.save.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-som-som">
+<h1>submapp.som.Som<a class="headerlink" href="#submapp-som-som" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="class">
+<dt id="submapp.som.Som">
+<em class="property">class </em><code class="sig-prename descclassname">submapp.som.</code><code class="sig-name descname">Som</code><span class="sig-paren">(</span><em class="sig-param">n: int</em>, <em class="sig-param">m: int</em>, <em class="sig-param">variables: list</em>, <em class="sig-param">p: int = 1</em>, <em class="sig-param">distance_matrix: numpy.ndarray = None</em>, <em class="sig-param">weights: numpy.ndarray = None</em>, <em class="sig-param">name: str = 'MySom'</em>, <em class="sig-param">data_mean: numpy.ndarray = array([0])</em>, <em class="sig-param">data_stdev: numpy.ndarray = array([1])</em><span class="sig-paren">)</span><a class="headerlink" href="#submapp.som.Som" title="Permalink to this definition">¶</a></dt>
+<dd><p>Self-Organizing Map (or Kohonen Map)</p>
+<p>Here is a quick summary of the purpose of every attribute and method.
+(Note that some of them may appear in several rows)</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Shape of the SOM</p></th>
+<td><p><a class="reference internal" href="Som/submapp.som.Som.n.html#id1"><span class="std std-ref">n</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.m.html#id1"><span class="std std-ref">m</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.nb_class.html#id1"><span class="std std-ref">nb_class</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.p.html#id1"><span class="std std-ref">p</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.shape.html#id1"><span class="std std-ref">shape</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.location_classes.html#id1"><span class="std std-ref">location_classes</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.distance_matrix.html#id1"><span class="std std-ref">distance_matrix</span></a></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Data processing</p></th>
+<td><p><a class="reference internal" href="Som/submapp.som.Som.data_mean.html#id1"><span class="std std-ref">data_mean</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.data_stdev.html#id1"><span class="std std-ref">data_stdev</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.standardize.html#id1"><span class="std std-ref">standardize</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.destandardize.html#id1"><span class="std std-ref">destandardize</span></a></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Training</p></th>
+<td><p><a class="reference internal" href="Som/submapp.som.Som.train.html#id1"><span class="std std-ref">train</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.nb_training_iterations.html#id1"><span class="std std-ref">nb_training_iterations</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.relerr_train.html#id1"><span class="std std-ref">relerr_train</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.is_trained.html#id1"><span class="std std-ref">is_trained</span></a></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Mapping</p></th>
+<td><p><a class="reference internal" href="Som/submapp.som.Som.map.html#id1"><span class="std std-ref">map</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.nb_inputs_mapped.html#id1"><span class="std std-ref">nb_inputs_mapped</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.class2weights.html#id1"><span class="std std-ref">class2weights</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.clear_map_info.html#id1"><span class="std std-ref">clear_map_info</span></a></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Testing</p></th>
+<td><p><a class="reference internal" href="Som/submapp.som.Som.weights.html#id1"><span class="std std-ref">weights</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.occ_bmu_map.html#id1"><span class="std std-ref">occ_bmu_map</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.weights_features.html#id1"><span class="std std-ref">weights_features</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.time_info.html#id1"><span class="std std-ref">time_info</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.transition.html#id1"><span class="std std-ref">transition</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.distance_transitions.html#id1"><span class="std std-ref">distance_transitions</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.print_heatmap.html#id1"><span class="std std-ref">print_heatmap</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.print_weights_pca_axis.html#id1"><span class="std std-ref">print_weights_pca_axis</span></a>,       <a class="reference internal" href="Som/submapp.som.Som.relerr_test.html#id1"><span class="std std-ref">relerr_test</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The <em>Name</em> of the Som object. This name has no impact on
+the variable name, however it can be usefull when it comes
+to saving the Som object and its related figures, defaults 
+to “MySom”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.data_mean.html#submapp.som.Som.data_mean" title="submapp.som.Som.data_mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.data_mean</span></code></a></p></td>
+<td><p>Mean of the training data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.data_stdev.html#submapp.som.Som.data_stdev" title="submapp.som.Som.data_stdev"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.data_stdev</span></code></a></p></td>
+<td><p>Standard deviation of the training data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.distance_matrix.html#submapp.som.Som.distance_matrix" title="submapp.som.Som.distance_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.distance_matrix</span></code></a></p></td>
+<td><p>Matrix of relative distance between each class</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.distance_transitions.html#submapp.som.Som.distance_transitions" title="submapp.som.Som.distance_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.distance_transitions</span></code></a></p></td>
+<td><p>Vector of distance between consecutive BMU mapped by the SOM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.is_trained.html#submapp.som.Som.is_trained" title="submapp.som.Som.is_trained"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.is_trained</span></code></a></p></td>
+<td><p>Indicate whether the training phase is completed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.m.html#submapp.som.Som.m" title="submapp.som.Som.m"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.m</span></code></a></p></td>
+<td><p>The number of columns of the SOM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.n.html#submapp.som.Som.n" title="submapp.som.Som.n"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.n</span></code></a></p></td>
+<td><p>The number of rows of the SOM</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.nb_class.html#submapp.som.Som.nb_class" title="submapp.som.Som.nb_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.nb_class</span></code></a></p></td>
+<td><p>The total number of classes of the SOM (<code class="docutils literal notranslate"><span class="pre">n*m</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.nb_inputs_mapped.html#submapp.som.Som.nb_inputs_mapped" title="submapp.som.Som.nb_inputs_mapped"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.nb_inputs_mapped</span></code></a></p></td>
+<td><p>Total number of vectors mapped by the SOM</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.nb_missing_transitions.html#submapp.som.Som.nb_missing_transitions" title="submapp.som.Som.nb_missing_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.nb_missing_transitions</span></code></a></p></td>
+<td><p>Number of transitions missed due to missing vectors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.nb_training_iterations.html#submapp.som.Som.nb_training_iterations" title="submapp.som.Som.nb_training_iterations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.nb_training_iterations</span></code></a></p></td>
+<td><p>Total number of vectors used to train the SOM</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.occ_bmu_map.html#submapp.som.Som.occ_bmu_map" title="submapp.som.Som.occ_bmu_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.occ_bmu_map</span></code></a></p></td>
+<td><p>Occurence of each class as BMU during the mapping phase</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.p.html#submapp.som.Som.p" title="submapp.som.Som.p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.p</span></code></a></p></td>
+<td><p>The size of input vectors (and of the weights too)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.relerr_test.html#submapp.som.Som.relerr_test" title="submapp.som.Som.relerr_test"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.relerr_test</span></code></a></p></td>
+<td><p>Relative error during the mapping phase</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.relerr_train.html#submapp.som.Som.relerr_train" title="submapp.som.Som.relerr_train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.relerr_train</span></code></a></p></td>
+<td><p>Relative error during the training phase</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.shape.html#submapp.som.Som.shape" title="submapp.som.Som.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.shape</span></code></a></p></td>
+<td><p>The shape of the SOM  <code class="docutils literal notranslate"><span class="pre">(n,m,p)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.time_info.html#submapp.som.Som.time_info" title="submapp.som.Som.time_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.time_info</span></code></a></p></td>
+<td><p>For each class, info about the instants <code class="docutils literal notranslate"><span class="pre">t</span></code> at which it has been used</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.transition.html#submapp.som.Som.transition" title="submapp.som.Som.transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.transition</span></code></a></p></td>
+<td><p>Matrix of occurence of the transition mapped by the SOM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.weights.html#submapp.som.Som.weights" title="submapp.som.Som.weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.weights</span></code></a></p></td>
+<td><p>Weights (i.e referent vectors) of the SOM</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.__init__.html#submapp.som.Som.__init__" title="submapp.som.Som.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.__init__</span></code></a></p></td>
+<td><p>Class constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.class2weights.html#submapp.som.Som.class2weights" title="submapp.som.Som.class2weights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.class2weights</span></code></a></p></td>
+<td><p>Matrix of referent vectors associated to the given classes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.clear_map_info.html#submapp.som.Som.clear_map_info" title="submapp.som.Som.clear_map_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.clear_map_info</span></code></a></p></td>
+<td><p>Clear all data related to the mapping phase</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.destandardize.html#submapp.som.Som.destandardize" title="submapp.som.Som.destandardize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.destandardize</span></code></a></p></td>
+<td><p>Multiply by <code class="docutils literal notranslate"><span class="pre">Som.data_stdev</span></code> and add <code class="docutils literal notranslate"><span class="pre">Som.data_mean</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.location_classes.html#submapp.som.Som.location_classes" title="submapp.som.Som.location_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.location_classes</span></code></a></p></td>
+<td><p><em>Locate</em> classes within the SOM: give their corresponding         indexes <code class="docutils literal notranslate"><span class="pre">(i,j)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.map.html#submapp.som.Som.map" title="submapp.som.Som.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.map</span></code></a></p></td>
+<td><p>Map data onto the SOM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.pca_weights_initialization.html#submapp.som.Som.pca_weights_initialization" title="submapp.som.Som.pca_weights_initialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.pca_weights_initialization</span></code></a></p></td>
+<td><p>Initialize weights with a PCA of the training data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.print_heatmap.html#submapp.som.Som.print_heatmap" title="submapp.som.Som.print_heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.print_heatmap</span></code></a></p></td>
+<td><p>Print the heatmap describing a feature of the classes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.print_weights_pca_axis.html#submapp.som.Som.print_weights_pca_axis" title="submapp.som.Som.print_weights_pca_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.print_weights_pca_axis</span></code></a></p></td>
+<td><p>Print the weights of the map on first two axis of the PCA</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.random_weights_initialization.html#submapp.som.Som.random_weights_initialization" title="submapp.som.Som.random_weights_initialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.random_weights_initialization</span></code></a></p></td>
+<td><p>Initialize weights randomly</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.sample_weights_initialization.html#submapp.som.Som.sample_weights_initialization" title="submapp.som.Som.sample_weights_initialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.sample_weights_initialization</span></code></a></p></td>
+<td><p>Initialize weights with a sample of the training data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.standardize.html#submapp.som.Som.standardize" title="submapp.som.Som.standardize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.standardize</span></code></a></p></td>
+<td><p>Substact <code class="docutils literal notranslate"><span class="pre">Som.data_mean</span></code> and divide by <code class="docutils literal notranslate"><span class="pre">Som.data_stdev</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.train.html#submapp.som.Som.train" title="submapp.som.Som.train"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.train</span></code></a></p></td>
+<td><p>Train the SOM (ie update the weights) provided training        data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Som/submapp.som.Som.weights_features.html#submapp.som.Som.weights_features" title="submapp.som.Som.weights_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.weights_features</span></code></a></p></td>
+<td><p>Extract some features from the weights</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Som/submapp.som.Som.zeros_weights_initialization.html#submapp.som.Som.zeros_weights_initialization" title="submapp.som.Som.zeros_weights_initialization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Som.zeros_weights_initialization</span></code></a></p></td>
+<td><p>Initialize all weights to zeros vectors</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">submapp.som.Som</a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/submapp/som/submapp.som.Som.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/submapp/som/submapp.som.Som.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

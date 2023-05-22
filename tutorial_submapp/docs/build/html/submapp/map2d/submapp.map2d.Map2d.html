@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.map2d.Map2d &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="submapp.map2d.Map2d.classes" href="Map2d/submapp.map2d.Map2d.classes.html" />
+    <link rel="prev" title="submapp.map2d.save" href="submapp.map2d.save.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-map2d-map2d">
+<h1>submapp.map2d.Map2d<a class="headerlink" href="#submapp-map2d-map2d" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="class">
+<dt id="submapp.map2d.Map2d">
+<em class="property">class </em><code class="sig-prename descclassname">submapp.map2d.</code><code class="sig-name descname">Map2d</code><span class="sig-paren">(</span><em class="sig-param">som</em>, <em class="sig-param">name: str = 'MyMap'</em><span class="sig-paren">)</span><a class="headerlink" href="#submapp.map2d.Map2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>A map associated to a Som object representing a time series</p>
+<p>A Map2d object is a convenient way of manipulating
+<a class="reference internal" href="../submapp.som.html#id1"><span class="std std-ref">SOM</span></a> and
+<a class="reference internal" href="../submapp.hmm.html#id1"><span class="std std-ref">HMM</span></a>
+outputs as it stores in the same object:</p>
+<ul>
+<li><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.true_values.html#id1"><span class="std std-ref">true_values</span></a>, 
+np.array[float], shape=(
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_inputs_mapped.html#id1"><span class="std std-ref">nb_inputs_mapped</span></a>,
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.p.html#id1"><span class="std std-ref">p</span></a>)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <em>real</em> values with which the Map2d was constructed
+if the method
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.map_from_data.html#id1"><span class="std std-ref">map_from_data</span></a>
+was used.</p></li>
+<li><p>The <em>real</em> values the Map2d tries to
+reconstruct if the method 
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.map_from_classes.html#id1"><span class="std std-ref">map_from_classes</span></a>
+was used. In this case 
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.classes.html#id1"><span class="std std-ref">classes</span></a> 
+are propably the output of the 
+<a class="reference internal" href="../hmm/Hmm/submapp.hmm.Hmm.viterbi.html#id1"><span class="std std-ref">viterbi</span></a>
+method and the true values - if available - have to be
+specified by the user either when calling the method
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.map_from_classes.html#id1"><span class="std std-ref">map_from_classes</span></a>
+or with the method 
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.add_true_values.html#id1"><span class="std std-ref">add_true_values</span></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.classes.html#id1"><span class="std std-ref">classes</span></a>, np.array[int], shape=(
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_inputs_mapped.html#id1"><span class="std std-ref">nb_inputs_mapped</span></a>)
+classes of the 
+<a class="reference internal" href="../som/submapp.som.Som.html#id1"><span class="std std-ref">SOM</span></a> representing <code class="docutils literal notranslate"><span class="pre">true_values</span></code></p></li>
+<li><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.values.html#id1"><span class="std std-ref">values</span></a>,
+np.array[float], shape=(
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_inputs_mapped.html#id1"><span class="std std-ref">nb_inputs_mapped</span></a>,
+<a class="reference internal" href="Map2d/submapp.map2d.Map2d.p.html#id1"><span class="std std-ref">p</span></a>)
+Referent vectors associated to <code class="docutils literal notranslate"><span class="pre">classes</span></code></p></li>
+<li><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.rmse_with_respect_to_depth.html#id1"><span class="std std-ref">rmse_with_respect_to_depth</span></a>,
+pandas.DataFrame that contains RMSE for each variables for each depth level.</p></li>
+</ul>
+<p>In addition, it stores its associated 
+<a class="reference internal" href="../submapp.som.html#id1"><span class="std std-ref">Som</span></a> 
+object so that essential properties are easy to access such as:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../som/Som/submapp.som.Som.distance_matrix.html#id1"><span class="std std-ref">distance_matrix</span></a>, 
+give the distance between 2 classes</p></li>
+<li><p><a class="reference internal" href="../som/Som/submapp.som.Som.distance_transitions.html#id1"><span class="std std-ref">distance_transitions</span></a>,
+stores the distance of all transitions mapped by the SOM</p></li>
+<li><p><a class="reference internal" href="../som/Som/submapp.som.Som.weights.html#id1"><span class="std std-ref">weights</span></a>, 
+Referent vectors (weights) associated to all classes</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The <em>Name</em> of the Map2d object. This name has no impact on
+the variable name, however it can be usefull when it comes
+to saving the Map2d object and its related figures, defaults 
+to “MyMap”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.classes.html#submapp.map2d.Map2d.classes" title="submapp.map2d.Map2d.classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.classes</span></code></a></p></td>
+<td><p>Vector of classes used by the Map2d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.distance_transitions.html#submapp.map2d.Map2d.distance_transitions" title="submapp.map2d.Map2d.distance_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.distance_transitions</span></code></a></p></td>
+<td><p>Vector of distance between consecutive BMU within the map</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.m.html#submapp.map2d.Map2d.m" title="submapp.map2d.Map2d.m"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.m</span></code></a></p></td>
+<td><p>The number of columns of the SOM</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.n.html#submapp.map2d.Map2d.n" title="submapp.map2d.Map2d.n"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.n</span></code></a></p></td>
+<td><p>The number of rows of the SOM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_class.html#submapp.map2d.Map2d.nb_class" title="submapp.map2d.Map2d.nb_class"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_class</span></code></a></p></td>
+<td><p>The total number of classes of the SOM (<code class="docutils literal notranslate"><span class="pre">n*m</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_classes_used.html#submapp.map2d.Map2d.nb_classes_used" title="submapp.map2d.Map2d.nb_classes_used"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_classes_used</span></code></a></p></td>
+<td><p>Number of different classes used by the Map2d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_inputs_mapped.html#submapp.map2d.Map2d.nb_inputs_mapped" title="submapp.map2d.Map2d.nb_inputs_mapped"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_inputs_mapped</span></code></a></p></td>
+<td><p>Number of inputs (classes or vectors) mapped by the Map2</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_missing_transitions.html#submapp.map2d.Map2d.nb_missing_transitions" title="submapp.map2d.Map2d.nb_missing_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_missing_transitions</span></code></a></p></td>
+<td><p>Number of transitions missed due to missing vectors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_missing_values.html#submapp.map2d.Map2d.nb_missing_values" title="submapp.map2d.Map2d.nb_missing_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_missing_values</span></code></a></p></td>
+<td><p>Number of missing values in the data mapped</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.nb_missing_vectors.html#submapp.map2d.Map2d.nb_missing_vectors" title="submapp.map2d.Map2d.nb_missing_vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.nb_missing_vectors</span></code></a></p></td>
+<td><p>Number of missing vectors in the data mapped</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.occ_bmu_map.html#submapp.map2d.Map2d.occ_bmu_map" title="submapp.map2d.Map2d.occ_bmu_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.occ_bmu_map</span></code></a></p></td>
+<td><p>Occurence of each class as BMU within the map</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.p.html#submapp.map2d.Map2d.p" title="submapp.map2d.Map2d.p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.p</span></code></a></p></td>
+<td><p>The size of input vectors (and of the weights too)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.relerr.html#submapp.map2d.Map2d.relerr" title="submapp.map2d.Map2d.relerr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.relerr</span></code></a></p></td>
+<td><p>Relative error between <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">true_values</span></code> of        the Map2d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.shape.html#submapp.map2d.Map2d.shape" title="submapp.map2d.Map2d.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.shape</span></code></a></p></td>
+<td><p>The shape of the SOM  <code class="docutils literal notranslate"><span class="pre">(n,m,p)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.som.html#submapp.map2d.Map2d.som" title="submapp.map2d.Map2d.som"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.som</span></code></a></p></td>
+<td><p>SOM of the Map2d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.transition.html#submapp.map2d.Map2d.transition" title="submapp.map2d.Map2d.transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.transition</span></code></a></p></td>
+<td><p>Matrix of occurence of transitions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.true_values.html#submapp.map2d.Map2d.true_values" title="submapp.map2d.Map2d.true_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.true_values</span></code></a></p></td>
+<td><p>Values of the real data represented by the Map2d</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.values.html#submapp.map2d.Map2d.values" title="submapp.map2d.Map2d.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.values</span></code></a></p></td>
+<td><p>Referent vectors associated to the classes used by the Map2d</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.__init__.html#submapp.map2d.Map2d.__init__" title="submapp.map2d.Map2d.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.__init__</span></code></a></p></td>
+<td><p>Class constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.add_true_values.html#submapp.map2d.Map2d.add_true_values" title="submapp.map2d.Map2d.add_true_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.add_true_values</span></code></a></p></td>
+<td><p>Add true values to the Map2d</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.map_from_classes.html#submapp.map2d.Map2d.map_from_classes" title="submapp.map2d.Map2d.map_from_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.map_from_classes</span></code></a></p></td>
+<td><p>Construct the Map2d from a vector of classes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.map_from_data.html#submapp.map2d.Map2d.map_from_data" title="submapp.map2d.Map2d.map_from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.map_from_data</span></code></a></p></td>
+<td><p>Construct the Map2d from real data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Map2d/submapp.map2d.Map2d.rmse_with_respect_to_depth.html#submapp.map2d.Map2d.rmse_with_respect_to_depth" title="submapp.map2d.Map2d.rmse_with_respect_to_depth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map2d.rmse_with_respect_to_depth</span></code></a></p></td>
+<td><p>Computes the RMSE of the map for each variables at each depth levels.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">submapp.map2d.Map2d</a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/submapp/map2d/submapp.map2d.Map2d.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/submapp/map2d/submapp.map2d.Map2d.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.hmm.Hmm.model &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="submapp.hmm.Hmm.n_dis" href="submapp.hmm.Hmm.n_dis.html" />
+    <link rel="prev" title="submapp.hmm.Hmm.ln_pi_eps" href="submapp.hmm.Hmm.ln_pi_eps.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-hmm-hmm-model">
+<h1>submapp.hmm.Hmm.model<a class="headerlink" href="#submapp-hmm-hmm-model" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="submapp.hmm.Hmm.model">
+<em class="property">property </em><code class="sig-prename descclassname">Hmm.</code><code class="sig-name descname">model</code><a class="headerlink" href="#submapp.hmm.Hmm.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model <code class="docutils literal notranslate"><span class="pre">(Tr,</span> <span class="pre">Em,</span> <span class="pre">pi)</span></code> of the HMM</p>
+<p>The tuple (
+<a class="reference internal" href="submapp.hmm.Hmm.Tr.html#id1"><span class="std std-ref">Tr</span></a>,    
+<a class="reference internal" href="submapp.hmm.Hmm.Em.html#id1"><span class="std std-ref">Em</span></a>,
+<a class="reference internal" href="submapp.hmm.Hmm.pi.html#id1"><span class="std std-ref">pi</span></a>        
+) defines all the probabilities required to build a HMM
+model. Once these 3 matrices are estimated one can find the
+most likely hidden state at instant <code class="docutils literal notranslate"><span class="pre">t</span></code> knowing the
+observable state at the same instant <code class="docutils literal notranslate"><span class="pre">t</span></code> and the previous
+hidden state at instant <code class="docutils literal notranslate"><span class="pre">t-1</span></code> (calculated recursively)</p>
+<p>The model has to be trained first. See:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.init_model.html#id1"><span class="std std-ref">init_model</span></a></p></li>
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.neighborhood.html#id1"><span class="std std-ref">neighborhood</span></a></p></li>
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.bw.html#id1"><span class="std std-ref">bw</span></a></p></li>
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.smooth_transitions.html#id1"><span class="std std-ref">smooth_transitions</span></a></p></li>
+</ul>
+<p>Once trained the
+<a class="reference internal" href="submapp.hmm.Hmm.viterbi.html#id1"><span class="std std-ref">viterbi</span></a> 
+algorithm can estimate the most likely hidden time series
+associated to an observable time series based on this model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[np.ndarray[float], np.ndarray[float],            np.ndarray[float]]</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.Tr.html#id1"><span class="std std-ref">Tr</span></a></p></li>
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.Em.html#id1"><span class="std std-ref">Em</span></a></p></li>
+<li><p><a class="reference internal" href="submapp.hmm.Hmm.pi.html#id1"><span class="std std-ref">pi</span></a></p></li>
+</ul>
+</div>
+</dd></dl>
+
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/submapp/hmm/Hmm/submapp.hmm.Hmm.model.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/submapp/hmm/Hmm/submapp.hmm.Hmm.model.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

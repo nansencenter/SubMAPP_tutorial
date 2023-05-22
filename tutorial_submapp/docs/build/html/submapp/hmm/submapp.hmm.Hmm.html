@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.hmm.Hmm &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="submapp.hmm.Hmm.Em" href="Hmm/submapp.hmm.Hmm.Em.html" />
+    <link rel="prev" title="submapp.hmm.save" href="submapp.hmm.save.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-hmm-hmm">
+<h1>submapp.hmm.Hmm<a class="headerlink" href="#submapp-hmm-hmm" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="class">
+<dt id="submapp.hmm.Hmm">
+<em class="property">class </em><code class="sig-prename descclassname">submapp.hmm.</code><code class="sig-name descname">Hmm</code><span class="sig-paren">(</span><em class="sig-param">n_obs: int</em>, <em class="sig-param">n_dis: int</em>, <em class="sig-param">name: str = 'MyHMM'</em><span class="sig-paren">)</span><a class="headerlink" href="#submapp.hmm.Hmm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hidden Markov Model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The <em>Name</em> of the Hmm object. This name has no impact on
+the variable name, however it can be usefull when it comes
+to saving the Hmm object and its related figures, defaults 
+to “MyHmm”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.Em.html#submapp.hmm.Hmm.Em" title="submapp.hmm.Hmm.Em"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.Em</span></code></a></p></td>
+<td><p>Emission matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.Tr.html#submapp.hmm.Hmm.Tr" title="submapp.hmm.Hmm.Tr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.Tr</span></code></a></p></td>
+<td><p>Transition matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.ln_Em_eps.html#submapp.hmm.Hmm.ln_Em_eps" title="submapp.hmm.Hmm.ln_Em_eps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.ln_Em_eps</span></code></a></p></td>
+<td><p>Pseudo-counts associated to the Emission matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.ln_Tr_eps.html#submapp.hmm.Hmm.ln_Tr_eps" title="submapp.hmm.Hmm.ln_Tr_eps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.ln_Tr_eps</span></code></a></p></td>
+<td><p>Pseudo-counts associated to the Transition matrix</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.ln_pi_eps.html#submapp.hmm.Hmm.ln_pi_eps" title="submapp.hmm.Hmm.ln_pi_eps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.ln_pi_eps</span></code></a></p></td>
+<td><p>Pseudo-counts associated to the Initialization matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.model.html#submapp.hmm.Hmm.model" title="submapp.hmm.Hmm.model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.model</span></code></a></p></td>
+<td><p>Model <code class="docutils literal notranslate"><span class="pre">(Tr,</span> <span class="pre">Em,</span> <span class="pre">pi)</span></code> of the HMM</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.n_dis.html#submapp.hmm.Hmm.n_dis" title="submapp.hmm.Hmm.n_dis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.n_dis</span></code></a></p></td>
+<td><p>Total number of hidden classes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.n_obs.html#submapp.hmm.Hmm.n_obs" title="submapp.hmm.Hmm.n_obs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.n_obs</span></code></a></p></td>
+<td><p>Total number of observable classes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.pi.html#submapp.hmm.Hmm.pi" title="submapp.hmm.Hmm.pi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.pi</span></code></a></p></td>
+<td><p>Initialization matrix</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.__init__.html#submapp.hmm.Hmm.__init__" title="submapp.hmm.Hmm.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.__init__</span></code></a></p></td>
+<td><p>Class constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.bw.html#submapp.hmm.Hmm.bw" title="submapp.hmm.Hmm.bw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.bw</span></code></a></p></td>
+<td><p>Apply Baum-Welch algorithm to the Hmm</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.init_model.html#submapp.hmm.Hmm.init_model" title="submapp.hmm.Hmm.init_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.init_model</span></code></a></p></td>
+<td><p>Initializes the model <code class="docutils literal notranslate"><span class="pre">(Tr,</span> <span class="pre">Em,</span> <span class="pre">pi)</span></code> and pseudo-counts</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.neighborhood.html#submapp.hmm.Hmm.neighborhood" title="submapp.hmm.Hmm.neighborhood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.neighborhood</span></code></a></p></td>
+<td><p>“Propagate” the probability of a hidden class to its neighbours</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.smooth_transitions.html#submapp.hmm.Hmm.smooth_transitions" title="submapp.hmm.Hmm.smooth_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.smooth_transitions</span></code></a></p></td>
+<td><p>Penalize (i.e decrease probability) long distance transitions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="Hmm/submapp.hmm.Hmm.viterbi.html#submapp.hmm.Hmm.viterbi" title="submapp.hmm.Hmm.viterbi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Hmm.viterbi</span></code></a></p></td>
+<td><p>Viterbi algorithm: retrieve hidden data from observable data</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">submapp.hmm.Hmm</a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/submapp/hmm/submapp.hmm.Hmm.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/submapp/hmm/submapp.hmm.Hmm.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,18 @@
+submapp.map2d.Map2d.transition
+==============================
+
+.. _submapp.map2d.Map2d.transition:
+
+.. currentmodule:: submapp.map2d
+
+.. autoproperty:: submapp.map2d.Map2d.transition
+
+.. rubric:: Home
+
+* :ref:`index`
+
+.. rubric:: Indices and tables
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

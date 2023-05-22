@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>submapp.map2d.Map2d.map_from_classes &#8212; SubMAPP  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"extensions": ["tex2jax.js"], "jax": ["input/TeX", "output/HTML-CSS"]})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="submapp.map2d.Map2d.map_from_data" href="submapp.map2d.Map2d.map_from_data.html" />
+    <link rel="prev" title="submapp.map2d.Map2d.add_true_values" href="submapp.map2d.Map2d.add_true_values.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="submapp-map2d-map2d-map-from-classes">
+<h1>submapp.map2d.Map2d.map_from_classes<a class="headerlink" href="#submapp-map2d-map2d-map-from-classes" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="id1"></span><dl class="method">
+<dt id="submapp.map2d.Map2d.map_from_classes">
+<code class="sig-prename descclassname">Map2d.</code><code class="sig-name descname">map_from_classes</code><span class="sig-paren">(</span><em class="sig-param">classes: numpy.ndarray</em>, <em class="sig-param">true_values: numpy.ndarray = []</em>, <em class="sig-param">overwrite: bool = False</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#submapp.map2d.Map2d.map_from_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct the Map2d from a vector of classes</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Missing values are represented by <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+and the class associated to an entire missing vector is
+<code class="docutils literal notranslate"><span class="pre">-1</span></code></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>classes</strong> (<em>np.ndarray</em><em>[</em><em>int</em><em>]</em>) – Classes representing some <em>real</em> data</p></li>
+<li><p><strong>true_values</strong> (<em>np.ndarray</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – <em>Real</em> values. Values represented by the Map2d.
+Defaults to []. In this case the true values are supposed
+unkown. In this case, the relative error
+<a class="reference internal" href="submapp.map2d.Map2d.relerr.html#id1"><span class="std std-ref">relerr</span></a>
+of the Map2d can’t be computed</p></li>
+<li><p><strong>overwrite</strong> (<em>bool</em><em>, </em><em>optional</em>) – Indicate whether the previous values (
+<a class="reference internal" href="submapp.map2d.Map2d.values.html#id1"><span class="std std-ref">values</span></a>, 
+<a class="reference internal" href="submapp.map2d.Map2d.true_values.html#id1"><span class="std std-ref">true_values</span></a>, 
+<a class="reference internal" href="submapp.map2d.Map2d.classes.html#id1"><span class="std std-ref">classes</span></a>, 
+) should be cleared.
+Defaults to False, in this case, the new values are
+appended to the current ones.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="submapp.map2d.Map2d.map_from_data.html#id1"><span class="std std-ref">map_from_data</span></a></p>
+</div>
+</dd></dl>
+
+<p class="rubric">Home</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../index.html#index"><span class="std std-ref">Welcome to SubMAPP’s documentation!</span></a></p></li>
+</ul>
+<p class="rubric">Indices and tables</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/submapp/map2d/Map2d/submapp.map2d.Map2d.map_from_classes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Natacha.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/submapp/map2d/Map2d/submapp.map2d.Map2d.map_from_classes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
