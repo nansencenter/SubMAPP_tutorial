@@ -30,14 +30,16 @@ Project is created with:
 * Python 3.6
 	
 ## Setup for Linux
+If you have already miniconda3 skip steps 2) and 3)
 1) Open a terminal in the Linux_install folder
-2) Run if you have already miniconda3 : bash -l init_tutorial.sh
-	   if you don't : bash -l init_tutorial_plus_miniconda.sh
+2) Run if you don't have already miniconda3 : bash -l install_miniconda.sh
+3) Reset your shell for changes, by running in the shell : source ~/.bashrc
+4) Run the script to install packages : bash -l init_tutorial.sh
+	   
 	   
 It will open automatically the jupyter notebook to access tutorials.
 If you close this jupyter session, just run in a NEW shell : jupyter notebook
 to get back.
-
 ## Setup for Windows
 1) Install miniconda3 (skip if you already have) with miniconda3.exe (in folder Windows_install), 
 you should create a miniconda3 folder in workshop folder  and then precise directory folder 
