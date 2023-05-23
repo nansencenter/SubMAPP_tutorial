@@ -1,13 +1,17 @@
+# SubMAPP_tutorial
+
+The goal of the SubMAPP package is to train a machine-learning based (ProfHMM) package to infer vertical chlorophylle-a 
+data with satellite surface data as inputs. This satellite data is composed of CHL-A and several variables linked to 
+chlorophyll-a like SST, MLD, I_0, SLA. The model depends on several parameters tuned during training part and should 
+be trained for a specific ocean area. 
+
+The goal of this workshop is to learn how to use ProfHMM model.
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Removing](#remove)
-
-## General info
-Welcome to ProfHMM model tutorial.
-The goal of this workshop is to learn how to use ProfHMM model.
-So you can create SOM and HMM object and try several configurations.
 
 ### Folder contents
 data  # all the numpy.array data used for the tutorial
