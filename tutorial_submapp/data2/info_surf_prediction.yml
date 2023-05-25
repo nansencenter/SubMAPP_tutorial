@@ -1,0 +1,15 @@
+blocks:
+- 2017
+- 2018
+- 2019
+data_origin: surface
+unit:
+- log(mgChl/m3)
+- Celsius
+- W/m2
+- m
+variables:
+- log_chl-a
+- sst
+- I_0
+- mld_surf
