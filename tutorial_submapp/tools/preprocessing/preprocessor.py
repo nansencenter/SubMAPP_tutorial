@@ -46,35 +46,6 @@ def normalization(n_years, data, n_var, new_data=False, data_stdev=None, data_me
     if new_data:
         return data_train
 
-def normalize_new_data(data, data_stdev, data_mean, n_years, n_var):
-    preprocessed_data = data.copy()
-    data_train = data.copy()
-    T_y=[]
-    for y in range(n_years):
-        T = len(preprocessed_data[0][y])
-        T_y = np.concatenate([T_y, [T]])
-    T_y = T_y.astype(int)
-
-    data_train_norm = [np.empty([]) for y in range(n_years)]
-    for y in range(n_years):
-        if len(preprocessed_data[0][0].shape) == 1:
-            p_tmp=1
-        else:
-            (_,p_tmp) = preprocessed_data[0][0].shape
-        data_train_norm[y] = np.concatenate([
-            np.reshape(standardize(data_train[i][y],
-                    data_mean[i],
-                    data_stdev[i]),(T_y[y],p_tmp) ) for i in range(n_var)], axis=1)
-
-    data_train = np.array(data_train_norm,dtype=object)
-
-    if np.shape(data_train)[0]==1:
-        data_train = np.array(data_train_norm)
-        data_train = data_train[0,:,:]
-
-    return data_train
-
-
 class Preprocessor:
     """
     This class will do all the preprocessing needed to get datasets ready for the training of a model.
