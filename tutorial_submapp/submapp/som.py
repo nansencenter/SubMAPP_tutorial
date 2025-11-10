@@ -1051,7 +1051,7 @@ class Som:
         """
         
         data_no_nan = remove_nan(data,False)
-        plt.figure(figsize=(16,9))
+        plt.figure(figsize=(6,6))
         if(not is_standardized):
             scaler = StandardScaler(with_mean=True, with_std=True)
             data_no_nan = scaler.fit_transform(data_no_nan)
@@ -1059,9 +1059,9 @@ class Som:
         proj_pca = pca.fit_transform(data_no_nan)
         ratio = pca.explained_variance_ratio_
         weights_projected = pca.transform(self.__weights)
-        plt.scatter(weights_projected[:,0],weights_projected[:,1],color='k',label='weights projected')
-        plt.scatter(proj_pca[:,0],proj_pca[:,1],alpha=0.5, label='data projected')
-        plt.title('Projection of the data on the first 2 axis of the PCA ('+str(100*round(np.sum(ratio),3))+'% variance explained) with the SOM weights')
+        sns.scatterplot(x=proj_pca[:,0],         y=proj_pca[:,1]         ,color='b',label='Data',           s = 50 ,alpha=0.5)
+        sns.scatterplot(x=weights_projected[:,0],y=weights_projected[:,1],color='k',label='Referent vector',s = 70)
+        plt.title('SOM weights projected on the 1st 2 PCA axis ('+str(100*round(np.sum(ratio),3))+'% variance explained)')
         plt.xlabel('Axis 1')
         plt.ylabel('Axis 2')
 

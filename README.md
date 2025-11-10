@@ -97,3 +97,4 @@ When your jupyter notebook session is up:
 1) Click on the "tutorial_submapp" folder
 2) Then click on the "Profhmm_training.ipynb" tutorial
 3) Then click on the "Profhmm_prediction.ipynb" tutorial
+4) Then click on the "submapp_GOTM_tutorial.ipynb" tutorial
